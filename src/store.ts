@@ -1,33 +1,19 @@
-import { createStore } from "redux";
-import { devToolsEnhancer } from "redux-devtools-extension";
-import { get } from "lodash";
+import { configureStore, createAction, createReducer } from "@reduxjs/toolkit";
 
 export interface StoreState {
   isSidebarVisible: boolean;
 }
 
 // Actions
-export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
-export type TOGGLE_SIDEBAR = typeof TOGGLE_SIDEBAR;
-export interface ToggleSidebar {
-  type: TOGGLE_SIDEBAR;
-}
-export const toggleSidebar = () => ({ type: TOGGLE_SIDEBAR });
+export const toggleSidebar = createAction("TOGGLE_SIDEBAR");
 
-// Reducer
-export const reducer = (state: StoreState, action: ToggleSidebar): StoreState => {
-  switch (action.type) {
-    case TOGGLE_SIDEBAR:
-      return Object.assign({}, state, { isSidebarVisible: !state.isSidebarVisible });
-    default:
-      return state;
-  }
-};
+export const initialState: StoreState = { isSidebarVisible: false };
+
+export const reducer = createReducer(initialState, {
+  [toggleSidebar.type]: (state: StoreState): void => {
+    state.isSidebarVisible = !state.isSidebarVisible;
+  },
+});
 
 // Store
-export const initialState: StoreState = { isSidebarVisible: false };
-export const store = createStore<StoreState, any, any, any>(
-  reducer,
-  initialState,
-  devToolsEnhancer({}),
-);
+export const store = configureStore({ reducer });
