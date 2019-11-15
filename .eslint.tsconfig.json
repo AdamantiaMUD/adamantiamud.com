@@ -6,14 +6,18 @@
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "allowJs": true,
-        "module": "es2015",
-        "moduleResolution": "node",
+        "module": "commonjs",
         "target": "esnext",
         "jsx": "react",
         "lib": ["dom", "esnext"]
     },
     "include": [
-        "./src/**/*"
+        "./generators/**/*",
+        "./src/**/*",
+        "./tools/**/*",
+        "./*.js",
+        "./*.ts",
+        "./*.tsx"
     ],
     "typeRoots": ["node_modules/@types"]
 }
