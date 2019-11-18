@@ -1,21 +1,15 @@
-import React from 'react';
-import {Header, Icon, Grid} from 'semantic-ui-react';
+import React, {FC} from 'react';
 
-import {withLayout} from '../components/Layout';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-const NotFoundPage = () =>
-    <Grid centered verticalAlign="middle"
-          style={{
-              minHeight: '700px',
-          }}
-    >
-        <Grid.Column>
-            <Grid.Row style={{textAlign: 'center'}}>
-                <Icon name="marker" size="huge"/>
-                <Header as="h1">You are here!</Header>
-                <Header as="h2">But nothing found for you #404</Header>
-            </Grid.Row>
-        </Grid.Column>
-    </Grid>;
+export const NotFoundPage: FC = () => (
+    <Layout>
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
+        <SEO title="404: Not found" />
+        <h1>{'NOT FOUND'}</h1>
+        <p>{'You just hit a route that doesn&#39;t exist... the sadness.'}</p>
+    </Layout>
+);
 
-export default withLayout(NotFoundPage);
+export default NotFoundPage;

@@ -1,15 +1,7 @@
-import React from 'react';
-import {Provider} from 'react-redux';
-import {renderToString} from 'react-dom/server';
+/**
+ * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/ssr-apis/
+ */
 
-import {store} from './src/store';
-
-export const replaceRenderer = ({bodyComponent, replaceBodyHTMLString}) => {
-    const ConnectedBody: React.FunctionComponent = () => (
-        <Provider store={store}>
-            {bodyComponent}
-        </Provider>
-    );
-
-    replaceBodyHTMLString(renderToString(<ConnectedBody />));
-};
+// You can delete this file if you're not using it

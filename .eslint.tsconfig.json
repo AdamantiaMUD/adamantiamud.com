@@ -7,14 +7,13 @@
         "allowSyntheticDefaultImports": true,
         "allowJs": true,
         "module": "commonjs",
+        "moduleResolution": "node",
         "target": "esnext",
         "jsx": "react",
         "lib": ["dom", "esnext"]
     },
     "include": [
-        "./generators/**/*",
         "./src/**/*",
-        "./tools/**/*",
         "./*.js",
         "./*.ts",
         "./*.tsx"

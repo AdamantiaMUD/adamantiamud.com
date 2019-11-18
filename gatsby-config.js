@@ -2,92 +2,44 @@
 
 module.exports = {
     siteMetadata: {
-        title: 'My website',
-        googleVerification: 'abcdefz',
-        disqus: 'gatsby-typescript',
-    },
-    mapping: {
-        'MarkdownRemark.frontmatter.author': 'AuthorJson',
+        title: 'AdamantiaMUD',
+        /* eslint-disable-next-line max-len */
+        description: 'Documentation, examples, and other information related to the Adamantia MUD engine.',
+        author: '@chimericdream',
     },
     plugins: [
-        // Expose `/data` to graphQL layer
+        'gatsby-plugin-typescript',
+        'gatsby-plugin-react-helmet',
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-                name: 'data',
-                path: `${__dirname}/data`,
+                name: 'images',
+                path: `${__dirname}/src/images`,
             },
         },
-
-        {
-            resolve: 'gatsby-plugin-google-analytics',
-            options: {
-                trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
-
-                // Puts tracking script in the head instead of the body
-                head: false,
-
-                // Setting this parameter is optional
-                anonymize: true,
-
-                // Setting this parameter is also optional
-                respectDNT: true,
-            },
-        },
-
-        // Parse all markdown files (each plugin add/parse some data into graphQL layer)
-        {
-            resolve: 'gatsby-transformer-remark',
-            options: {
-                plugins: [
-                    {
-                        resolve: 'gatsby-remark-images',
-                        options: {
-                            maxWidth: 690,
-                            backgroundColor: '#f7f0eb',
-                        },
-                    },
-                    'gatsby-remark-prismjs',
-                    'gatsby-remark-copy-linked-files',
-                    'gatsby-remark-autolink-headers',
-                ],
-            },
-        },
-
-        // Parse all images files
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
-
-        // Parse JSON files
-        'gatsby-transformer-json',
-
-        // Add typescript stack into webpack
-        'gatsby-plugin-typescript',
-
-        /*
-         * This plugin takes your configuration and generates a
-         * web manifest file so your website can be added to your
-         * homescreen on Android.
-         */
-        /* eslint-disable @typescript-eslint/camelcase, id-match */
+        'gatsby-plugin-emotion',
         {
             resolve: 'gatsby-plugin-manifest',
+            /* eslint-disable @typescript-eslint/camelcase, id-match */
             options: {
-                name: 'Gatsby website',
-                short_name: 'Gatsby website',
+                name: 'AdamantiaMUD Documentation',
+                short_name: 'Adamantia Docs',
                 start_url: '/',
-                background_color: '#f7f7f7',
-                theme_color: '#191919',
+                background_color: '#639',
+                theme_color: '#639',
                 display: 'minimal-ui',
+
+                // This path is relative to the root of the site.
+                icon: 'src/images/gatsby-icon.png',
             },
+            /* eslint-enable @typescript-eslint/camelcase, id-match */
         },
-        /* eslint-enable @typescript-eslint/camelcase, id-match */
 
         /*
-         * This plugin generates a service worker and AppShell
-         * html file so the site works offline and is otherwise
-         * resistant to bad networks. Works with almost any
-         * site!
+         * this (optional) plugin enables Progressive Web App + Offline functionality
+         * To learn more, visit: https://gatsby.dev/offline
          */
         'gatsby-plugin-offline',
     ],
