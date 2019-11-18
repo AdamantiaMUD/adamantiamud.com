@@ -21,8 +21,8 @@ import SiteContent from './layout/site-content';
 import SiteWrapper from './layout/site-wrapper';
 import GlobalStyles from './global-styles';
 
-export const Layout: FC = (props: PropsWithChildren<never>) => {
-    const {children} = props;
+export const Layout: FC<{location: Location}> = (props: PropsWithChildren<{location: Location}>) => {
+    const {children, location} = props;
 
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
@@ -40,7 +40,7 @@ export const Layout: FC = (props: PropsWithChildren<never>) => {
             <SiteWrapper>
                 <Header siteTitle={data.site.siteMetadata.title} />
                 <MainWrapper>
-                    <LeftNav />
+                    <LeftNav location={location} />
                     <SiteContent>
                         <main>{children}</main>
                         <Footer />

@@ -34,5 +34,12 @@ module.exports = {
                 ],
             },
         ],
+        'react/jsx-pascal-case': [
+            'error',
+            {
+                allowAllCaps: false,
+                ignore: ['SEO'],
+            },
+        ],
     }
 };
