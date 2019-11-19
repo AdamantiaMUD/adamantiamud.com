@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import {jsx} from '@emotion/core';
-import {FC, PropsWithChildren} from 'react';
+import {FC, PropsWithChildren as PWC} from 'react';
 import {useTheme} from 'emotion-theming';
 
 import {SiteTheme} from '../../util/site-theme';
 
-export const MainWrapper: FC = (props: PropsWithChildren<never>) => {
+export const MainWrapper: FC = (props: PWC<never>) => {
     const {layout} = useTheme<SiteTheme>();
 
     const css = {

@@ -1,5 +1,3 @@
-import {SerializedStyles, css} from '@emotion/core';
-
 export interface SiteTheme {
     colors: {
         danger: string;
@@ -11,6 +9,7 @@ export interface SiteTheme {
         warning: string;
     };
     layout: {
+        contentMaxWidth: string;
         gridGutter: string;
         leftNavWidth: string;
         siteFooterHeight: string;
@@ -29,6 +28,7 @@ export const theme: SiteTheme = {
         warning: '#c8a600',
     },
     layout: {
+        contentMaxWidth: 'calc(100% - 16rem)',
         gridGutter: '1rem',
         leftNavWidth: '16rem',
         siteFooterHeight: '2rem',

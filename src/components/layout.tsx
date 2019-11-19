@@ -5,7 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, {FC, PropsWithChildren} from 'react';
+/** @jsx jsx */
+import {jsx} from '@emotion/core';
+import {FC, PropsWithChildren as PWC} from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
 import {ThemeProvider} from 'emotion-theming';
 
@@ -13,7 +15,6 @@ import '../util/icons';
 
 import theme from '../util/site-theme';
 
-import Footer from './layout/footer';
 import Header from './layout/header';
 import LeftNav from './layout/left-nav';
 import MainWrapper from './layout/main-wrapper';
@@ -21,7 +22,7 @@ import SiteContent from './layout/site-content';
 import SiteWrapper from './layout/site-wrapper';
 import GlobalStyles from './global-styles';
 
-export const Layout: FC<{location: Location}> = (props: PropsWithChildren<{location: Location}>) => {
+export const Layout: FC<{location: Location}> = (props: PWC<{location: Location}>) => {
     const {children, location} = props;
 
     const data = useStaticQuery(graphql`
@@ -42,8 +43,7 @@ export const Layout: FC<{location: Location}> = (props: PropsWithChildren<{locat
                 <MainWrapper>
                     <LeftNav location={location} />
                     <SiteContent>
-                        <main>{children}</main>
-                        <Footer />
+                        {children}
                     </SiteContent>
                 </MainWrapper>
             </SiteWrapper>

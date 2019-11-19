@@ -1,13 +1,14 @@
 import React, {FC} from 'react';
+import {PageRendererProps} from 'gatsby';
 
 import Layout from '../components/layout';
+import PageTitle from '../components/general/page-title';
 import SEO from '../components/seo';
-import {PageRendererProps} from 'gatsby';
 
 export const NotFoundPage: FC<PageRendererProps> = ({location}: PageRendererProps) => (
     <Layout location={location}>
         <SEO title="404: Not found" />
-        <h1>{'NOT FOUND'}</h1>
+        <PageTitle>{'NOT FOUND'}</PageTitle>
         <p>{'You just hit a route that doesn&#39;t exist... the sadness.'}</p>
     </Layout>
 );

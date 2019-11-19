@@ -7,11 +7,9 @@ import {Link} from 'gatsby';
 import {SiteTheme} from '../../util/site-theme';
 
 export const LeftNav: FC<{location: Location}> = (props: {location: Location}) => {
-    const {colors, layout} = useTheme<SiteTheme>();
+    const {colors} = useTheme<SiteTheme>();
 
     const {location} = props;
-
-    console.dir(location);
 
     const css = {
         backgroundColor: colors.navBg,
