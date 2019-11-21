@@ -8,8 +8,8 @@ import SEO from '../components/seo';
 export const NotFoundPage: FC<PageRendererProps> = ({location}: PageRendererProps) => (
     <Layout location={location}>
         <SEO title="404: Not found" />
-        <PageTitle>{'NOT FOUND'}</PageTitle>
-        <p>{'You just hit a route that doesn&#39;t exist... the sadness.'}</p>
+        <PageTitle>NOT FOUND</PageTitle>
+        <p>You just hit a route that doesn{'\u0027'}t exist... the sadness.</p>
     </Layout>
 );
 

@@ -34,14 +34,14 @@ export const LeftNav: FC<{location: Location}> = (props: {location: Location}) =
     return (
         <aside css={css}>
             <Link activeStyle={activeLinkCss} css={linkCss} to="/">
-                {'Home'}
+                Home
             </Link>
             <Link activeStyle={activeLinkCss} css={linkCss} to="/getting-started/">
-                {'Getting Started'}
+                Getting Started
             </Link>
             {!bundlesSub && (
                 <Link activeStyle={activeLinkCss} css={linkCss} to="/bundles/core/">
-                    {'Bundles'}
+                    Bundles
                 </Link>
             )}
             {bundlesSub && (
@@ -50,29 +50,29 @@ export const LeftNav: FC<{location: Location}> = (props: {location: Location}) =
                         css={{...linkCss, ...activeLinkCss}}
                         to="/bundles/core/"
                     >
-                        {'Bundles'}
+                        Bundles
                     </Link>
                     <div css={{paddingLeft: '1.5rem'}}>
                         <Link activeStyle={activeLinkCss} css={linkCss} to="/bundles/core/">
-                            {'Core Bundles'}
+                            Core Bundles
                         </Link>
                         <Link activeStyle={activeLinkCss} css={linkCss} to="/bundles/optional/">
-                            {'Optional Bundles'}
+                            Optional Bundles
                         </Link>
                     </div>
                 </div>
             )}
             <Link activeStyle={activeLinkCss} css={linkCss} to="/release-notes/">
-                {'Release Notes'}
+                Release Notes
             </Link>
             <Link activeStyle={activeLinkCss} css={linkCss} to="/contributing/">
-                {'Contributing'}
+                Contributing
             </Link>
             <Link activeStyle={activeLinkCss} css={linkCss} to="/license-credits/">
-                {'License/Credits'}
+                License/Credits
             </Link>
             <Link activeStyle={activeLinkCss} css={linkCss} to="/source-docs/">
-                {'Source Docs'}
+                Source Docs
             </Link>
         </aside>
     );

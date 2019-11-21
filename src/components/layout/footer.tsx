@@ -14,8 +14,7 @@ export const Footer: FC = (props: PWC<never>) => {
 
     return (
         <footer css={css} {...props}>
-            {`© ${new Date().getFullYear()}, Built with `}
-            <a href="https://www.gatsbyjs.org">{'Gatsby'}</a>
+            © {new Date().getFullYear()}, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
     );
 };

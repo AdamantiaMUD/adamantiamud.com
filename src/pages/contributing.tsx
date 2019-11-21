@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 export const SecondPage: FC<PageRendererProps> = ({location}: PageRendererProps) => (
     <Layout location={location}>
         <SEO title="Contributing" />
-        <PageTitle>{'Contributing'}</PageTitle>
+        <PageTitle>Contributing</PageTitle>
     </Layout>
 );
 

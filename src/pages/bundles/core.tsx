@@ -8,7 +8,7 @@ import SEO from '../../components/seo';
 export const CoreBundlesPage: FC<PageRendererProps> = ({location}: PageRendererProps) => (
     <Layout location={location}>
         <SEO title="Core Bundles" />
-        <PageTitle>{'Core Bundles'}</PageTitle>
+        <PageTitle>Core Bundles</PageTitle>
     </Layout>
 );
 
